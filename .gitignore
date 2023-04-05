@@ -1,0 +1,17 @@
+**.project
+**.iml
+**.settings
+**.classpath
+**.factorypath
+**.springBeans
+**.DS_Store
+**target/
+**.idea/
+**test-output/
+**.log
+**.vagrant
+puppet
+.tmp/
+modules/
+trailer/
+build/
