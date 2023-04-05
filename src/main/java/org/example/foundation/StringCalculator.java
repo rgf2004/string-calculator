@@ -3,6 +3,8 @@
  */
 package org.example.foundation;
 
+import java.util.Arrays;
+
 /**
  * String Calculator
  *
@@ -10,7 +12,11 @@ package org.example.foundation;
  */
 public class StringCalculator {
 
-	public int add(String numbers) {
-		return 0;
-	}
+    public int add(String numbers) {
+        if (numbers.isEmpty()) {
+            return 0;
+        }
+        final String[] numbersArray = numbers.split(",");
+        return Arrays.stream(numbersArray).map(Integer::parseInt).reduce(0, Integer::sum);
+    }
 }
