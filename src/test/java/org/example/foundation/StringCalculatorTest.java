@@ -30,4 +30,22 @@ class StringCalculatorTest {
         final int actual = TARGET.add("1,2");
         assertThat(actual).isEqualTo(3);
     }
+
+    @Test
+    void multipleNumbersString() {
+        final int actual = TARGET.add("1,2,1,1,1,1");
+        assertThat(actual).isEqualTo(7);
+    }
+
+    @Test
+    void multipleNumbersWithNewLineCharacterString() {
+        final int actual = TARGET.add("1\n2,3");
+        assertThat(actual).isEqualTo(6);
+    }
+
+    @Test
+    void firstLineWithDelimiterString() {
+        final int actual = TARGET.add("//;\n1;2");
+        assertThat(actual).isEqualTo(3);
+    }
 }

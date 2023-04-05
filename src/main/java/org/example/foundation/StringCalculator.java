@@ -16,7 +16,13 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        final String[] numbersArray = numbers.split(",");
+        String regex=",\\n";
+        if(numbers.startsWith("//")){
+            regex = regex+numbers.charAt(2);
+            numbers= numbers.substring(4);
+        }
+        final String[] numbersArray = numbers.split("["+regex+"]");
+        // TODO
         return Arrays.stream(numbersArray).map(Integer::parseInt).reduce(0, Integer::sum);
     }
 }
